@@ -1,0 +1,22 @@
+{
+  "name": "freetext-back",
+  "version": "1.0.0",
+  "description": "Serveur side for the freeText system",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elodie1298/freeText-back.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Elodie1298/freeText-back/issues"
+  },
+  "homepage": "https://github.com/Elodie1298/freeText-back#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
