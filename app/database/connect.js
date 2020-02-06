@@ -1,14 +1,24 @@
+// Imports
 let mysql = require('mysql');
 
-let connection = mysql.createConnection({
+
+// Local connection
+export let connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'root',
     database: 'freetext'
 });
 
-connection.connect();
 
-module.exports = {
-    connection
-};
+// // Prod connection
+// let connection = mysql.createConnection({
+//     host: 'localhost:3306',
+//     user: 'freetextApp',
+//     password: 'wQ$2p23g',
+//     database: 'freetext'
+// });
+
+
+// Connect to the database
+connection.connect();
