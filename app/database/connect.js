@@ -3,7 +3,7 @@ let mysql = require('mysql');
 
 
 // Local connection
-export let connection = mysql.createConnection({
+let connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'root',
@@ -22,3 +22,9 @@ export let connection = mysql.createConnection({
 
 // Connect to the database
 connection.connect();
+
+
+// Export of the module
+module.exports = {
+  connection
+};

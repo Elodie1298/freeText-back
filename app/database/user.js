@@ -1,18 +1,15 @@
-
-
-// Get user from id
-import {executeQuery} from "../util";
+let executeQuery = require( "../util").executeQuery;
 
 
 // Recover user from id
-export function get(id_user) {
+function get(id_user) {
     let query = `select * from user where id_user = ${id_user}`;
     return executeQuery(query);
 }
 
 
 // Recover user id based on its informations
-export function login(name, phoneNumber) {
+function login(name, phoneNumber) {
     return new Promise((resolve, reject) => {
         let queryGet = `SELECT id_user FROM user WHERE phone_number='${phoneNumber}'`;
         executeQuery(queryGet)
@@ -31,3 +28,11 @@ export function login(name, phoneNumber) {
             .catch(err => reject(err));
     });
 }
+
+
+
+// Export of the module
+module.exports = {
+    get,
+    login
+};

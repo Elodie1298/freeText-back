@@ -4,14 +4,13 @@ let bodyParser = require("body-parser");
 let app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 
-import {badRequest} from "./app/util";
+let badRequest = require('./app/util').badRequest;
 
 // Import of database functions
 let user = require('./app/database/user');
 let message = require('./app/database/message');
 let conversation = require('./app/database/conversation');
 let participant = require('./app/database/participant');
-
 
 
 
