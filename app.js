@@ -14,6 +14,8 @@ let participant = require('./app/database/participant');
 
 
 
+
+
 // User functions
 app.all('/login', (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
@@ -41,7 +43,7 @@ app.all('/conversations', (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     if (req.method === 'GET') {
         if (req.query.id_user != null) {
-            conversation.get(req.query.id_user)
+            conversation.get(req.query.id_user, req.query.timestamp)
                 .then(result => res.json(result));
         } else {
             res.status(400);
@@ -66,7 +68,7 @@ app.all('/messages', (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     if (req.method === 'GET') {
         if (req.query.id_user != null) {
-            message.getAll(req.query.id_user, req.query.timestamp)
+            message.get(req.query.id_user, req.query.timestamp)
                 .then(result => res.json(result));
         }
         else {
@@ -97,7 +99,7 @@ app.all('/participants', (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     if (req.method === 'GET') {
         if (req.query.id_user != null) {
-            participant.get(req.query.id_user)
+            participant.get(req.query.id_user, req.query.timestamp)
                 .then(result => res.json(result));
         } else {
             res.status(400);
