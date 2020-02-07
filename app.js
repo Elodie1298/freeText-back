@@ -25,6 +25,16 @@ app.all('/login', (req, res) => {
     }
 });
 
+app.all('/user', (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    if (req.method === 'GET') {
+        user.get(req.query.id_user)
+            .then(result => res.json(result));
+    } else {
+        badRequest(res);
+    }
+});
+
 
 // Conversation functions
 app.all('/conversations', (req, res) => {
