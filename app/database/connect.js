@@ -4,20 +4,11 @@ let mysql = require('mysql');
 
 // Local connection
 let connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    database: 'freetext'
+    host: 'localhost', // host of the database
+    user: 'root', // username to access the database
+    password: 'root', // password to access the database
+    database: 'freetext' // database name
 });
-
-
-// // Prod connection
-// let connection = mysql.createConnection({
-//     host: 'localhost:3306',
-//     user: 'freetextApp',
-//     password: 'wQ$2p23g',
-//     database: 'freetext'
-// });
 
 
 // Connect to the database

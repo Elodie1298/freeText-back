@@ -4,7 +4,7 @@
   "description": "Serveur side for the freeText system",
   "main": "app.js",
   "scripts": {
-    "run": "nodemon app.js",
+    "app": "nodemon app.js",
     "install": "npm i nodemon"
   },
   "repository": {

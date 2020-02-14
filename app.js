@@ -29,8 +29,13 @@ app.all('/login', (req, res) => {
 app.all('/user', (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     if (req.method === 'GET') {
-        user.get(req.query.id_user)
-            .then(result => res.json(result));
+        if (req.query.id_user != null) {
+            user.get(req.query.id_user)
+                .then(result => res.json(result));
+        } else {
+            res.status(400);
+            res.send('You should specify the id_user.');
+        }
     } else {
         badRequest(res);
     }

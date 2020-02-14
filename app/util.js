@@ -3,7 +3,7 @@ let connection = require("./database/connect").connection;
 
 // Execute the given query and return the result as a promise
 function executeQuery(query) {
-    console.log(query); // WIP
+    console.log(new Date().toLocaleString(), query); // WIP
     return new Promise((resolve, reject) => {
         connection.query(query, (err, rows, _) => {
             if (err) reject(err);
