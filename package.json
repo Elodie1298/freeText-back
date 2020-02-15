@@ -1,6 +1,6 @@
 {
   "name": "freetext-back",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Serveur side for the freeText system",
   "main": "app.js",
   "scripts": {
