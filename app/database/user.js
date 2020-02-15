@@ -8,6 +8,13 @@ function get(id_user) {
 }
 
 
+// Recover all users
+function getAll() {
+    let query = `select * from user`;
+    return executeQuery(query);
+}
+
+
 // Recover user id based on its informations
 function login(name, phoneNumber) {
     return new Promise((resolve, reject) => {
@@ -34,5 +41,6 @@ function login(name, phoneNumber) {
 // Export of the module
 module.exports = {
     get,
-    login
+    login,
+    getAll
 };
